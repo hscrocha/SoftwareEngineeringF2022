@@ -1,11 +1,8 @@
 import React from "react";
-import { Text, View } from "react-native";
+import HelloWorld from "./view/HelloWorld";
 
 export default function App(){
     return (
-        <View style={{flex: 1,justifyContent:'center',alignItems:'center'}}>
-            <Text style={{fontSize:20}}> Hello React-Native</Text>
-
-        </View>
+        <HelloWorld>Hello React Native!</HelloWorld>
     );
 }
