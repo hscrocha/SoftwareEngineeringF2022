@@ -48,5 +48,6 @@ Some suggestions for such databases that work with React Native:
 - [Realm](https://realm.io/): Uses MongDB cloud server (which is free).
 - [Firebase](https://firebase.google.com/): NoSQL database by Google. Also a free service.
 - [DynamoDB](https://aws.amazon.com/dynamodb/): Amazon Web Service free* (but it will demand credit card info, even though it is "free").
+- [AppWrite](https://appwrite.io/): free software as service back end functionalities, including a NoSQL database.
 
 
