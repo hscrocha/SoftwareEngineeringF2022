@@ -1,9 +1,10 @@
 import {Button, Dimensions, Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native'    
-import UserIcon from '../icons/UserIcon';
+import MainMenuItem from '../components/MainMenuItem';
+import QuestionIcon from '../icons/QuestionIcon';
 const DeviceWidth = Dimensions.get('window').width
-const StdWidth = DeviceWidth*0.3;
+const StdWidth = DeviceWidth*0.48;
 
-export default function MainMenuScreen({ navigation }){
+export default function MainMenuScreen(props){
     return (
 <View style={{
     flex: 1,
@@ -14,28 +15,43 @@ export default function MainMenuScreen({ navigation }){
       flexDirection: 'row',
       backgroundColor: "transparent"}}>
       <View>
+        {/* The component bellow is to showcase the original menu code */}
         <TouchableOpacity style={menuStyle.boxitem} onPress={() =>
-          navigation.navigate('Hello World') }>
-          <Image style={menuStyle.image} source={require('../../resources/user-flat.png')} />
+          props.navigation.navigate('Hello World') }>
+          <Image style={menuStyle.image} source={require('../../resources/question-mark-icon.png')} />
           <Text> Menu 1 </Text>
         </TouchableOpacity>
-        <TouchableOpacity style={menuStyle.boxitem} onPress={() =>
-          navigation.navigate('Hello World 2') }>
-          <UserIcon style={menuStyle.image} />
-          <Text> Menu 2 </Text>
-        </TouchableOpacity>
-        <View style={menuStyle.boxitem} /> 
+        {/* Since all menu items are basically the same,
+          I took out the code and placed into a new component: MainMenuItem */}
+        <MainMenuItem 
+          style={menuStyle} 
+          image={require('../../resources/user-flat.png')} 
+          text='Menu 2' 
+          action={()=>{props.navigation.navigate('Hello World',{text:'Hello M3'})}}
+          />
+        <MainMenuItem 
+          style={menuStyle} 
+          text='Menu 3' 
+          action={()=>{props.navigation.navigate('Hello World',{text:'Hello M3'})}}
+          />
       </View>
       <View>
-        <View style={menuStyle.boxitem} /> 
-        <View style={menuStyle.boxitem} /> 
-        <View style={menuStyle.boxitem} /> 
+      <MainMenuItem 
+          style={menuStyle} 
+          text='Menu 4' 
+          action={()=>{props.navigation.navigate('Hello World',{text:'Hello M4'})}}
+          />
+        <MainMenuItem 
+          style={menuStyle} 
+          text='Menu 5' 
+          action={()=>{props.navigation.navigate('Hello World',{text:'Hello M5'})}}
+          />
+        <MainMenuItem 
+          style={menuStyle} 
+          text='Menu 6' 
+          action={()=>{props.navigation.navigate('Hello World',{text:'Hello M6'})}}
+          />
       </View>
-      <View>
-        <View style={menuStyle.boxitem} /> 
-        <View style={menuStyle.boxitem} /> 
-        <View style={menuStyle.boxitem} /> 
-      </View>    
     </View>
   </View>
     );
