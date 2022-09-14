@@ -5,6 +5,9 @@ export default class UserEntity{
     password;
     permission;
 
+    static permNormal = 2; //Permission for Normal user
+    static permAdmin = 1; //Permission for Adm
+
     constructor(userObj){
         if(userObj!==undefined){
             Object.assign(this, userObj);
@@ -14,4 +17,6 @@ export default class UserEntity{
         const {...obj} = this;
         return obj;
     }
+
+
 }

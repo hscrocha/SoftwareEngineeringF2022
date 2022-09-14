@@ -19,15 +19,15 @@ export default function MainMenuScreen(props){
         <TouchableOpacity style={menuStyle.boxitem} onPress={() =>
           props.navigation.navigate('Hello World') }>
           <Image style={menuStyle.image} source={require('../../resources/question-mark-icon.png')} />
-          <Text> Menu 1 </Text>
+          <Text style={{fontSize:16}}> Menu 1 </Text>
         </TouchableOpacity>
         {/* Since all menu items are basically the same,
           I took out the code and placed into a new component: MainMenuItem */}
         <MainMenuItem 
           style={menuStyle} 
           image={require('../../resources/user-flat.png')} 
-          text='Menu 2' 
-          action={()=>{props.navigation.navigate('Hello World',{text:'Hello M3'})}}
+          text='Register' 
+          action={()=>{props.navigation.navigate('Register')}}
           />
         <MainMenuItem 
           style={menuStyle} 

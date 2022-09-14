@@ -1,4 +1,14 @@
-import bcrypt from 'bcrypt';
+import bcrypt from 'react-native-bcrypt';
+import isaac from 'isaac';
+
+//The code below is to diminish the warning on 
+//"Using Math.random is not cryptographically secure!"
+// It stills gives a warning but only once.
+bcrypt.setRandomFallback((len) => {
+    const buf = new Uint8Array(len);
+    return buf.map(() => Math.floor(isaac.random() * 256));
+});
+
 
 export default class PasswordUtil{
     /**

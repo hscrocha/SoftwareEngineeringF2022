@@ -33,5 +33,12 @@ test('Create user',async function(){
     expect(created.login).toBe(testData[0].login);
     expect(created.password).not.toBe(testData[0].password);
 });
-
+test('Read one - Login',async function(){
+    for(let data of testData){
+        await dao.create({...data});
+    }
+    const found = await dao.readOne({login: testData[1].login});
+    expect(found.login).toBe(testData[1].login);
+    expect(found.name).toBe(testData[1].name);
+});
 

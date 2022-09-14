@@ -24,6 +24,9 @@ export default class GenericDao {
     async readById(idvalue){
         return await this.db.findOneAsync({_id: idvalue});
     }
+    async readOne(condition){
+        return await this.db.findOneAsync(condition);
+    }
     async read(condition){
         return await this.db.findAsync(condition);
     }
@@ -46,7 +49,7 @@ export default class GenericDao {
     }
     async deleteAll(){
         //should not be used or relied upon
-        //return await this.deleteMore({});
+        //return await this.deleteMany({});
     }
 
 }

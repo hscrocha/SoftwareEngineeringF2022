@@ -9,7 +9,7 @@ export default function MainMenuItem(props){
         <TouchableOpacity style={props.style.boxitem} onPress={() =>
             props.action() }>
             <Image style={props.style.image} source={loadedimage}  />
-            <Text> {props.text} </Text>
+            <Text style={{fontSize:16}}> {props.text} </Text>
         </TouchableOpacity>  
     );
 }
