@@ -21,12 +21,13 @@ npm install
 
 For MacOS, you need to also do 
 ```
-cd ios
-pod install
-cd ..
+npx pod-install
 ```
 
-You will also need to "register" this app once by using the command: ```npm start```
+You will also need to "register" this app once by using the command: 
+```
+npm start
+```
 
 ## How to Run
 
