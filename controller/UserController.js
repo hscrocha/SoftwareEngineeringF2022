@@ -3,13 +3,10 @@ import UserEntity from "../model/entity/UserEntity";
 import UserDao from '../model/dao/UserDaoLocal';
 //import GenericDao from '../model/dao/LocalGenericDao'
 import dbConnect from "../model/LocalDbConnection";
-import testConnect from "../model/LocalTestDbConnection"
 
 export default class UserController{
     constructor(test = false){
-        this.db = test? //Ternaty operator
-            testConnect() //If test==true connect to test
-            :dbConnect(UserDao.dbName()); //else
+        this.db = dbConnect(test?'test':UserDao.dbName());        
         this.dao = new UserDao(this.db);
     }
     

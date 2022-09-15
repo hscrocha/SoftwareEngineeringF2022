@@ -1,5 +1,5 @@
 import UserDao from "./UserDaoLocal";
-import dbConnect from "../LocalTestDbConnection";
+import dbConnect from "../LocalDbConnection";
 import UserEntity from "../entity/UserEntity";
 
 let dao = null;
@@ -14,7 +14,7 @@ beforeAll(function(){
     // Not necessary here
 });
 beforeEach(function(){
-    const db = dbConnect(); //creates a new db before each test
+    const db = dbConnect('test'); //creates a new db before each test
     dao = new UserDao(db); //sets the db for the Generic DAO
 });
 test('Login test',async function(){

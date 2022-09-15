@@ -1,5 +1,5 @@
 import GenericDao from "./LocalGenericDao";
-import dbConnect from "../LocalTestDbConnection";
+import dbConnect from "../LocalDbConnection";
 
 const genTestData=[
     {name:'Test Data 1', status:1, other:'Ok'},
@@ -13,7 +13,7 @@ beforeAll(function(){
     // Not necessary here
 });
 beforeEach(function(){
-    const db = dbConnect(); //creates a new db before each test
+    const db = dbConnect('test'); //creates a new db before each test
     dao = new GenericDao(db); //sets the db for the Generic DAO
 });
 test('Create/Insert',async function(){    

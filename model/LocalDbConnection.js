@@ -7,7 +7,14 @@ import MockStorage from "./LocalMockStorage";
  * @returns a local mongodb database object 
  */
 export default function dbConnect(dbname){
-    const db = new Datastore({filename:`./${dbname}.db`, storage:AsyncStorage, autoload:true, inMemoryOnly:false});
-    return db;
+    if(dbname!=='test'){
+        const db = new Datastore({filename:`./${dbname}.db`, storage:AsyncStorage, autoload:true, inMemoryOnly:false});
+        return db;
+    }
+    else{ //Test DB
+        const mockstore = new MockStorage();
+        const db = new Datastore({filename:`./test.db`, storage:mockstore, autoload:true, inMemoryOnly:true});
+        return db;
+    }
 }
 
