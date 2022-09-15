@@ -6,7 +6,7 @@ This is repo contains some code examples of a React Native mobile app. This is t
 
 The app in this repo is not complete. Neither it is following good design decisions for a real-world mobile project. The purpose is to showcase some important concepts (e.g., testing), and simpler design (e.g., local database). 
 
-Moreover, I test the above project on MacOS deploying in a IOS simulator. Please adapt when necessary for Android and other OS. 
+Moreover, I tested the above project on MacOS deploying in a IOS simulator. Please adapt when necessary for Android and other OS. 
 
 ## Getting Started (Setup your Environment)
 
@@ -35,9 +35,9 @@ After all the above steps, you can use ```npm run ios``` or ```npm run android``
 
 ## Testing
 
-The framework [Jest](https://jestjs.io/) is already configured when creating any Reactive Native app. To run the tests use the command ``npm test```.
+The framework [Jest](https://jestjs.io/) is already configured when creating any Reactive Native app. To run the tests use the command ```npm test```.
 
-To display the coverage report use the command ``npm test -- --coverage```. The extra dashes and space before --coverage is not a typo.
+To display the coverage report use the command ```npm test -- --coverage```. The extra dashes and space before --coverage is not a typo.
 
 Carefull that when dealing with Databases, Remote Databases, and Remote Connections/Fetches, you will often need to mock these resources.
 
