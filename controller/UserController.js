@@ -1,7 +1,6 @@
 import React from "react";
 import UserEntity from "../model/entity/UserEntity";
 import UserDao from '../model/dao/UserDaoLocal';
-//import GenericDao from '../model/dao/LocalGenericDao'
 import dbConnect from "../model/LocalDbConnection";
 
 export default class UserController{
@@ -9,11 +8,11 @@ export default class UserController{
         this.db = dbConnect(test?'test':UserDao.dbName());        
         this.dao = new UserDao(this.db);
     }
-    
+
     async registerNewUser(userobj){
         if(!userobj.permission) userobj.permission = UserEntity.permNormal;
         if(!userobj.login) userobj.login = userobj.email;
-        
+
         const exists = await this.findUserByLogin(userobj);
         if(exists==null){
             //The login/email do not exist in the db
@@ -30,7 +29,6 @@ export default class UserController{
         let found = null;
         if(userobj.login) found = await this.dao.readOne({login: userobj.login});
         else if(userobj.email) found = await this.dao.readOne({login: userobj.email});
-
         return found;
     }
 }

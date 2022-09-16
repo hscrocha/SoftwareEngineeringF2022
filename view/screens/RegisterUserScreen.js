@@ -10,7 +10,7 @@ export default function RegisterUserScreen(props){
         const data = {name: pName, email:pEmail, password:pPass};
         const controller = new UserController();
         const newUser = await controller.registerNewUser(data);
-        console.log(newUser);
+        //console.log(newUser);
         if(newUser!=null)
             alert('New User Registered Successfully');
         else
